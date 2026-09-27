@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Roadmap · Кибербезопасность</title>
+      <link
+         rel="icon"
+         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="style.css" />
+      <meta name="author" content="BetterFly" />
+   </head>
+   <body>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+      <header class="topbar">
+         <div class="topbar-inner">
+            <div class="brand">
+               <span class="brand-mark" aria-hidden="true">▹</span>
+               <div class="brand-text">
+                  <h1 id="site-title">Roadmap</h1>
+                  <p id="site-subtitle" class="brand-sub">кибербезопасность</p>
+               </div>
+            </div>
+
+            <div class="overall">
+               <div
+                  class="overall-ring"
+                  id="overall-ring"
+                  role="img"
+                  aria-label="Общий прогресс"
+               >
+                  <svg viewBox="0 0 64 64">
+                     <circle class="ring-track" cx="32" cy="32" r="28"></circle>
+                     <circle
+                        class="ring-fill"
+                        id="ring-fill"
+                        cx="32"
+                        cy="32"
+                        r="28"
+                     ></circle>
+                  </svg>
+                  <span class="ring-label" id="overall-pct">0%</span>
+               </div>
+               <div class="overall-text">
+                  <span class="overall-title">Общий прогресс</span>
+                  <span class="overall-detail" id="overall-detail"
+                     >0 / 0 пунктов</span
+                  >
+               </div>
+            </div>
+
+            <div class="actions">
+               <button
+                  class="btn"
+                  id="btn-expand"
+                  type="button"
+                  title="Развернуть или свернуть все этапы"
+               >
+                  Развернуть всё
+               </button>
+               <button class="btn" id="btn-export" type="button">
+                  Экспорт
+               </button>
+               <button class="btn" id="btn-import" type="button">Импорт</button>
+               <input
+                  type="file"
+                  id="file-import"
+                  accept="application/json"
+                  hidden
+               />
+               <button class="btn btn-danger" id="btn-reset" type="button">
+                  Сбросить
+               </button>
+            </div>
+         </div>
+      </header>
+
+      <main class="layout">
+         <p class="hint">
+            Галочка означает «я реально это умею и сделала», а не «прочитала».
+            Открывай этап на пути, отмечай пункты — прогресс сохраняется в этом
+            браузере автоматически.
+         </p>
+         <div id="trail" class="trail" aria-label="Путь обучения"></div>
+      </main>
+
+      <div class="modal-backdrop" id="reset-backdrop" hidden>
+         <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reset-title"
+         >
+            <h2 id="reset-title">Сбросить весь прогресс?</h2>
+            <p>
+               Все отметки на этом устройстве будут удалены без возможности
+               восстановить. Если важно сохранить результат — сначала сделай
+               экспорт.
+            </p>
+            <div class="modal-actions">
+               <button class="btn" id="reset-cancel" type="button">
+                  Отмена
+               </button>
+               <button class="btn btn-danger" id="reset-confirm" type="button">
+                  Сбросить
+               </button>
+            </div>
+         </div>
+      </div>
+
+      <footer class="foot">
+         <p>
+            Прогресс хранится локально в этом браузере. Чтобы перенести его на
+            другой компьютер — используй «Экспорт» и «Импорт».
+         </p>
+      </footer>
+
+      <script src="script.js"></script>
+   </body>
+</html>
